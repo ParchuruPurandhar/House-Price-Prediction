@@ -233,4 +233,3 @@ elif page == "Model Performance":
     st.success(
         "Linear Regression selected as final model."
     )
-```
