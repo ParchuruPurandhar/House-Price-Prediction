@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 import pandas as pd
 import joblib
@@ -11,7 +10,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# Load files
 @st.cache_resource
 def load_model():
     model = joblib.load("House.pkl")
@@ -25,7 +23,6 @@ def load_data():
 model, preprocessor = load_model()
 df = load_data()
 
-# Sidebar
 page = st.sidebar.selectbox(
     "Navigation",
     [
@@ -36,7 +33,6 @@ page = st.sidebar.selectbox(
     ]
 )
 
-# ---------------- HOME ----------------
 if page == "Home":
 
     st.title("🏠 House Price Prediction")
@@ -55,7 +51,6 @@ if page == "Home":
     st.subheader("Dataset Sample")
     st.dataframe(df.head())
 
-# ---------------- EDA ----------------
 elif page == "EDA":
 
     st.title("📊 Exploratory Data Analysis")
@@ -100,7 +95,6 @@ elif page == "EDA":
 
         st.pyplot(fig)
 
-# ---------------- PREDICTION ----------------
 elif page == "Prediction":
 
     st.title("💰 Predict House Price")
@@ -203,7 +197,6 @@ elif page == "Prediction":
             f"🏠 Predicted House Price: ₹ {prediction:,.0f}"
         )
 
-# ---------------- PERFORMANCE ----------------
 elif page == "Model Performance":
 
     st.title("📈 Model Performance")
