@@ -141,13 +141,6 @@ Categorical features were transformed into numerical values using:
 ```python
 LabelEncoder()
 ```
-
-or
-
-```python
-pd.get_dummies()
-```
-
 ### Feature Scaling
 
 Numerical variables were standardized when required.
@@ -202,7 +195,7 @@ The following metrics were used:
 
 ### Best Performing Model
 
-🏆 **Random Forest Regressor** 
+🏆 **Linear Regressor** 
 
 Reasons:
 
